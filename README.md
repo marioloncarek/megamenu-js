@@ -9,7 +9,7 @@ Last responsive megamenu you'll ever need
 - 100% responsive, works on all devices
 - Seamless wordpress integration
 - Super fast 
-- Uses jquery animations (IE8 copatible)
+- Uses jquery animations (IE8 compatible)
 - Easy to use
 - Written in LESS (easy to abuse)
 - Uses ionicons
@@ -22,6 +22,11 @@ Download and open index.html **or:**
 #### Live Demo
 Live demo is avaliable on codepen 
 [megamenu.js demo](http://codepen.io/riogrande/pen/MKXweV)
+
+
+## To do
+- rewrite plugin in vanilla JS 
+- make CSS only animation version, for no < IE11 support
 
 
 ## Instalation
