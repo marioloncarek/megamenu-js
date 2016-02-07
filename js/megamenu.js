@@ -25,10 +25,9 @@ $(document).ready(function () {
     });
     //If width is more than 943px dropdowns are displayed on hover
 
-    $(".menu > ul > li").click(function (e) {
+    $(".menu > ul > li").click(function () {
         if ($(window).width() <= 943) {
             $(this).children("ul").fadeToggle(150);
-            e.preventDefault();
         }
     });
     //If width is less or equal to 943px dropdowns are displayed on click (thanks Aman Jain from stackoverflow)
