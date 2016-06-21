@@ -1,5 +1,5 @@
 // PLUGIN NAME - must match scss name and js name - check src/js/pluginname.js and src/scss/project/pluginname.scss
-var pluginName = 'pluginname';
+var pluginName = 'megamenu';
 
 // UTILITIES
 var gulp = require('gulp');

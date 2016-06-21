@@ -1,7 +1,7 @@
 {
-  "name": "raw-project",
+  "name": "megamenu-js",
   "version": "1.0.0",
-  "description": "Project boilerplate",
+  "description": "Last responsive megamenu you'll ever need",
   "main": "gulpfile.js",
   "directories": {
     "test": "test"

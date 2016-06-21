@@ -1,0 +1,103 @@
+/*
+- Name: Plugin name
+- Version: 1.0
+- Author: Mario Loncarek
+- Author web site: http://marioloncarek.com
+*/
+
+$menu-bg: #e9e9e9;
+$hover-and-dropdown-bg: #f0f0f0;
+$megamenu-child-width: 25%;
+$menu-font-color: #444;
+$dropdown-font-color: #444;
+$dropdown-border: 1px solid #ccc;
+$responsive-breakpoint: 767px;
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    display: table;
+    content: ' ';
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin reset-menu-elements() {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin breakpoint($point, $min-or-max: max-width) {
+  @media only screen and ($min-or-max: $point) {
+    @content;
+  }
+}
+
+.menu {
+  width: 80%;
+  margin: 0 auto;
+  background: $menu-bg;
+  @include breakpoint($responsive-breakpoint) {
+    width: 100%;
+  }
+  ul {
+    @include reset-menu-elements;
+    @include clearfix;
+    list-style: none;
+    position: relative;
+    > li {
+      @include reset-menu-elements;
+      float: left;
+      @include breakpoint($responsive-breakpoint) {
+        width: 100%;
+      }
+      &:hover {
+        background: $hover-and-dropdown-bg;
+      }
+      > a {
+        display: block;
+        padding: 1.5em 2.5em;
+        color: $menu-font-color;
+      }
+      > ul {
+        /*display: none;*/
+        position: absolute;
+        z-index: 99;
+        left: 0;
+        width: 100%;
+        background: #f0f0f0;
+        @include breakpoint($responsive-breakpoint) {
+          position: relative;
+        }
+        > li {
+          width: $megamenu-child-width;
+          padding: 1.5em;
+          @include breakpoint($responsive-breakpoint) {
+            width: 100%;
+          }
+          > a {
+            padding: 0;
+            border-bottom: $dropdown-border;
+            color: $dropdown-font-color;
+          }
+          > ul {
+            display: block;
+            position: relative;
+            padding-top: 1em;
+            > li {
+              width: 100%;
+              padding: 0;
+              > a {
+                font-size: .9em;
+                padding: .5em 0;
+                border: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

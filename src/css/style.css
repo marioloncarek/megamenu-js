@@ -565,8 +565,8 @@ body {
     background: #fff;
     color: #444;
     letter-spacing: 0.03em;
-    font-size: 1.4em;
-    font-family: "Muli", sans-serif;
+    font-size: 1.6em;
+    font-family: "Hind Guntur", sans-serif;
     line-height: 1.5;
 }
 
@@ -639,5 +639,103 @@ PROJECT
 - Author: Mario Loncarek
 - Author web site: http://marioloncarek.com
 */
+.menu {
+    margin: 0 auto;
+    width: 80%;
+    background: #e9e9e9;
+}
+
+@media only screen and (max-width: 767px) {
+    .menu {
+        width: 100%;
+    }
+}
+
+.menu ul {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu ul:before, .menu ul:after {
+    display: table;
+    content: ' ';
+}
+
+.menu ul:after {
+    clear: both;
+}
+
+.menu ul > li {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and (max-width: 767px) {
+    .menu ul > li {
+        width: 100%;
+    }
+}
+
+.menu ul > li:hover {
+    background: #f0f0f0;
+}
+
+.menu ul > li > a {
+    display: block;
+    padding: 1.5em 2.5em;
+    color: #444;
+}
+
+.menu ul > li > ul {
+        /*display: none;*/
+    position: absolute;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    background: #f0f0f0;
+}
+
+@media only screen and (max-width: 767px) {
+    .menu ul > li > ul {
+        position: relative;
+    }
+}
+
+.menu ul > li > ul > li {
+    padding: 1.5em;
+    width: 25%;
+}
+
+@media only screen and (max-width: 767px) {
+    .menu ul > li > ul > li {
+        width: 100%;
+    }
+}
+
+.menu ul > li > ul > li > a {
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+    color: #444;
+}
+
+.menu ul > li > ul > li > ul {
+    position: relative;
+    display: block;
+    padding-top: 1em;
+}
+
+.menu ul > li > ul > li > ul > li {
+    padding: 0;
+    width: 100%;
+}
+
+.menu ul > li > ul > li > ul > li > a {
+    padding: .5em 0;
+    border: 0;
+    font-size: .9em;
+}
 
 /*# sourceMappingURL=maps/style.css.map */
