@@ -1,0 +1,204 @@
+/* 
+- Name: sass-mixins
+- URL: https://github.com/marioloncarek/sass-mixins
+- Version: 1.0
+- Latest update: 19.06.2016
+- Author: Mario Loncarek
+- Author web site: http://marioloncarek.com
+*/
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––
+MIXINS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* FONT FACE
+- usage: @include font-face('hk_grotesklight', '../fonts/hk-grotesk/hkgrotesk-light-webfont');
+- usage: @include font-face('hk_grotesklight', '../fonts/hk-grotesk/hkgrotesk-light-webfont', 700, italic);
+*/
+@mixin font-face($family, $url-without-ext, $font-weight: normal, $font-style: normal) {
+  @font-face {
+    font-family: '#{$family}';
+    src: url('#{$url-without-ext}.eot'); /* IE9 Compat Modes */
+    src: url('#{$url-without-ext}.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('#{$url-without-ext}.woff2') format('woff2'), /* Super Modern Browsers */
+    url('#{$url-without-ext}.woff') format('woff'), /* Pretty Modern Browsers */
+    url('#{$url-without-ext}.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('#{$url-without-ext}.svg##{$family}') format('svg'); /* Legacy iOS */
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+}
+
+/* SINGLE BREAKPOINT WITH MIN OR MAX WIDTH
+- usage:@include breakpoint(xl){} or
+@include breakpoint(600px, min-width){}
+@include breakpoint(number or predefined point, max-width(px)/min-width(px)/or any other feature){}
+*/
+@mixin breakpoint($point, $min-or-max: max-width) {
+  @if $point == "xl" { /* 1399px */
+    @media only screen and ($min-or-max: $screen-xl) {
+      @content;
+    }
+  } @else if $point == "lg" { /* 1199px */
+    @media only screen and ($min-or-max: $screen-lg) {
+      @content;
+    }
+  } @else if $point == "md" { /* 979px */
+    @media only screen and ($min-or-max: $screen-md) {
+      @content;
+    }
+  } @else if $point == "sm" { /* 767px */
+    @media only screen and ($min-or-max: $screen-sm) {
+      @content;
+    }
+  } @else if $point == "xs" { /* 400px */
+    @media only screen and ($min-or-max: $screen-xs) {
+      @content;
+    }
+  } @else {
+    @media only screen and ($min-or-max: $point) {
+      @content;
+    }
+  }
+}
+
+/* BREAKPOINTS
+- usage: @include breakpoints(400px, 600px){} or @include breakpoints(400px, 600px, 'only screen'){}
+- $media-type is disabled as default
+*/
+@mixin breakpoints($min-width, $max-width, $media-type: false) {
+  @if $media-type {
+    @media #{$media-type} and (min-width: $min-width) and (max-width: $max-width) {
+      @content;
+    }
+  } @else {
+    @media all and (min-width: $min-width) and (max-width: $max-width) {
+      @content;
+    }
+  }
+}
+
+/* BOX SIZING
+- usage: @include box-sizing;
+- with or without arguments, border-box is default
+*/
+@mixin box-sizing($box-model: border-box) {
+  box-sizing: $box-model;
+}
+
+/* CLEAR FIX - clear after floats
+- usage: @include clearfix;
+- no arguments
+*/
+@mixin clearfix {
+  &:before,
+  &:after {
+    display: table;
+    content: ' ';
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+/* TRANSITIONS
+- usage: @include transitions; or @include transitions(color, .5, ease-out, .1);
+*/
+@mixin transitions($property: all, $duration: .2s, $timing-function: ease, $delay: 0s) {
+  transition: $property $duration $timing-function $delay;
+}
+
+/* BORDER RADIUS - for the rounded edges
+- usage: @include border-radius-radius; or @include border-radius-radius(5px);
+*/
+@mixin border-radius-radius($radius: 3px) {
+  border-radius: $radius;
+  background-clip: padding-box;
+}
+
+/* BORDER RADIUS - for circling
+- usage: @include border-radius-round; or @include border-radius-round(100%);
+*/
+@mixin border-radius-round($radius: 100px) {
+  border-radius: $radius;
+  background-clip: padding-box;
+}
+
+/* BORDER RADIUS - for defining only some rounded corners
+- usage: @include border-radius-custom; or @include border-radius-custom(5px, 5px, 0, 0);
+- second example above will give 5px border radius on top left and top right corner
+*/
+@mixin border-radius-custom($topleft: 3px, $topright: 3px, $bottomright: 3px, $bottomleft: 3px) {
+  border-radius: $topleft $topright $bottomright $bottomleft;
+}
+
+/* BORDER RADIUS - for defining left corners radius
+- usage: @include border-radius-left; or @include border-radius-left(3px, 0, 0, 3px);
+- second example above will give 5px border radius on top left and bottom left corner
+*/
+@mixin border-radius-left($topleft: 3px, $bottomleft: 3px) {
+  border-radius: $topleft 0 0 $bottomleft;
+}
+
+/* BORDER RADIUS - for defining right corners radius
+- usage: @include border-radius-right; or @include border-radius-right(0, 3px, 3px, 0);
+- second example above will give 5px border radius on top right and bottom right corner
+*/
+@mixin border-radius-right($topright: 3px, $bottomright: 3px) {
+  border-radius: 0 $topright $bottomright 0;
+}
+
+/* CENTER ANYTHING - with position absolute
+- usage: @include center(vertical/horizontal/both)
+- must have argument
+- important: put transform-style: preserve-3d; in case of blurry elements
+*/
+@mixin center($position: "vertical") {
+  position: absolute;
+  @if $position == "vertical" {
+    top: 50%;
+    transform: translateY(-50%);
+  } @else if $position == "horizontal" {
+    left: 50%;
+    transform: translate(-50%);
+  } @else if $position == "both" {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* BOX SHADOW
+- usage: @include box-shadow; or @include box-shadow(0, 2px, 2px, #333);
+*/
+@mixin box-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $color: $ui-default) {
+  box-shadow: $x-axis $y-axis $blur $color;
+}
+
+/* GRADIENT BACKGROUND - with fallback
+- usage: @include gradient(90, #fff, #333);
+- must have argument
+*/
+@mixin gradient($angle, $colour1, $colour2) {
+  background: $colour1;
+  background: linear-gradient(#{$angle}deg, $colour1 0%, $colour2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$colour1', endColorstr='$colour2', GradientType=1);
+}
+
+/* Rotate - with fallback
+- usage: @include rotate; or @include rotate(90);
+*/
+@mixin rotate($degrees: 180) {
+  transform: rotate(#{$degrees}deg);
+  filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=-#{sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)});
+}
+
+/* Opacity - cross browser
+- usage @include opacity(0.5);
+- must have argument
+*/
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie);
+}

@@ -1,0 +1,62 @@
+/*
+- Name: Raw git project - variables.scss
+- Version: 1.0
+- Latest update: 19.06.2016
+- Author: Mario Loncarek
+- Author web site: http://marioloncarek.com
+*/
+
+/* TYPOGRAPHY */
+
+$base-font: ('Muli', sans-serif);
+$heading-font: ('Poppins', sans-serif);
+$base-letter-spacing: .03em;
+$base-font-size: 1.4em; /* Equals 14px */
+$base-line-height: 1.5;
+
+/* Baseline calculation  */
+
+$baseline: 2.0rem;
+
+/* Font calculations  */
+
+$h1-font-size: 5.0rem;
+$h2-font-size: 4.2rem;
+$h3-font-size: 3.6rem;
+$h4-font-size: 3.0rem;
+$h5-font-size: 2.4rem;
+$h6-font-size: 1.6rem;
+$small-font-size: .8em;
+
+/* PROJECT SPECIFIC COLORS */
+
+$primary: #0071bc;
+$secondary: #f0f0f0;
+$tertiary: #333;
+$error: #f1404b;
+$warning: #ffbc00;
+$success: #39c892;
+$neutral: #4F779F;
+$white: #fff;
+
+/* BASE COLORS */
+
+$body-background: #fff;
+$base-font-color: #444;
+$heading-font-color: #333;
+$link-color: $primary;
+$link-color-hover: tint($primary, 40%);
+$selection-color: #b3d4fc; /* Background of selection */
+$base: #e1e1e1; /* Basic core element colors like borders, colors, backgrounds etc... */
+$ui-default: #333; /* Default backgrounds for UI elements like buttons, badges etc... */
+$typography-special-colors: #777; /* Colors for html tags like em's, italics, abbr's etc... */
+$disabled-color: #aaa; /* Background of disabled elements */
+$placeholder-color: #aaa; /* Color for placeholder text */
+
+/* RESPONSIVE - utilities/mixins */
+
+$screen-xl: 87.438em; /* 1399px */
+$screen-lg: 74.938em; /* 1199px */
+$screen-md: 59.938em; /* 959px */
+$screen-sm: 47.938em; /* 767px */
+$screen-xs: 25em; /* 400px */

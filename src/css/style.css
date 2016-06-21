@@ -1,0 +1,643 @@
+@charset "UTF-8";
+/* 
+- Name: Raw git project - style.scss
+- Version: 1.0
+- Latest update: 19.06.2016
+- Author: Mario Loncarek
+- Author web site: http://marioloncarek.com
+*/
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––
+IMPORTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––
+BASE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* 
+- Name: Raw git project - normalize.scss
+- Version: 1.0
+- Author: Mario Loncarek
+- Author web site: http://marioloncarek.com
+*/
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––
+NORMALIZE.CSS v4.1.1
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Change the default font family in all browsers (opinionated).
+ * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
+ */
+html {
+    font-family: sans-serif;
+  /* 1 */
+    -ms-text-size-adjust: 100%;
+  /* 2 */
+    -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+    margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ * 2. Add the correct display in IE.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  /* 1 */
+    display: block;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+canvas,
+progress,
+video {
+    display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+    vertical-align: baseline;
+}
+
+/**
+ * Add the correct display in IE 10-.
+ * 1. Add the correct display in IE.
+ */
+template,
+[hidden] {
+    display: none;
+}
+
+/* Links
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+    background-color: transparent;
+  /* 1 */
+    -webkit-text-decoration-skip: objects;
+  /* 2 */
+}
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
+a:active,
+a:hover {
+    outline-width: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the bottom border in Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+    border-bottom: none;
+  /* 1 */
+    text-decoration: underline;
+  /* 2 */
+    text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+b,
+strong {
+    font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+    font-weight: bolder;
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+dfn {
+    font-style: italic;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+    margin: 0.67em 0;
+    font-size: 2em;
+}
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+mark {
+    background-color: #ff0;
+    color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+    font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+    position: relative;
+    vertical-align: baseline;
+    font-size: 75%;
+    line-height: 0;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+img {
+    border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  /* 1 */
+    font-size: 1em;
+    font-family: monospace, monospace;
+  /* 2 */
+}
+
+/**
+ * Add the correct margin in IE 8.
+ */
+figure {
+    margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  /* 1 */
+    overflow: visible;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+  /* 1 */
+    height: 0;
+  /* 2 */
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change font properties to `inherit` in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+select,
+textarea {
+  /* 1 */
+    margin: 0;
+    font: inherit;
+  /* 2 */
+}
+
+/**
+ * Restore the font weight unset by the previous rule.
+ */
+optgroup {
+    font-weight: bold;
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+    overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+    text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+  /* 2 */
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    padding: 0;
+    border-style: none;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
+/**
+ * Change the border, margin, and padding in all browsers (opinionated).
+ */
+fieldset {
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+    border: 1px solid #c0c0c0;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  /* 2 */
+    display: table;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  /* 1 */
+    padding: 0;
+  /* 1 */
+    max-width: 100%;
+  /* 1 */
+    color: inherit;
+  /* 3 */
+    white-space: normal;
+  /* 1 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+textarea {
+    overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+[type="checkbox"],
+[type="radio"] {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  /* 1 */
+    padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  /* 1 */
+    outline-offset: -2px;
+    -webkit-appearance: textfield;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
+ */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */
+::-webkit-input-placeholder {
+    color: inherit;
+    opacity: 0.54;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  /* 1 */
+    font: inherit;
+    -webkit-appearance: button;
+  /* 2 */
+}
+
+/*
+- Name: Raw git project - variables.scss
+- Version: 1.0
+- Latest update: 19.06.2016
+- Author: Mario Loncarek
+- Author web site: http://marioloncarek.com
+*/
+/* TYPOGRAPHY */
+/* Equals 14px */
+/* Baseline calculation  */
+/* Font calculations  */
+/* PROJECT SPECIFIC COLORS */
+/* BASE COLORS */
+/* Background of selection */
+/* Basic core element colors like borders, colors, backgrounds etc... */
+/* Default backgrounds for UI elements like buttons, badges etc... */
+/* Colors for html tags like em's, italics, abbr's etc... */
+/* Background of disabled elements */
+/* Color for placeholder text */
+/* RESPONSIVE - utilities/mixins */
+/* 1399px */
+/* 1199px */
+/* 959px */
+/* 767px */
+/* 400px */
+/* 
+- Name: sass-mixins
+- URL: https://github.com/marioloncarek/sass-mixins
+- Version: 1.0
+- Latest update: 19.06.2016
+- Author: Mario Loncarek
+- Author web site: http://marioloncarek.com
+*/
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––
+MIXINS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* FONT FACE
+- usage: @include font-face('hk_grotesklight', '../fonts/hk-grotesk/hkgrotesk-light-webfont');
+- usage: @include font-face('hk_grotesklight', '../fonts/hk-grotesk/hkgrotesk-light-webfont', 700, italic);
+*/
+/* SINGLE BREAKPOINT WITH MIN OR MAX WIDTH
+- usage:@include breakpoint(xl){} or
+@include breakpoint(600px, min-width){}
+@include breakpoint(number or predefined point, max-width(px)/min-width(px)/or any other feature){}
+*/
+/* BREAKPOINTS
+- usage: @include breakpoints(400px, 600px){} or @include breakpoints(400px, 600px, 'only screen'){}
+- $media-type is disabled as default
+*/
+/* BOX SIZING
+- usage: @include box-sizing;
+- with or without arguments, border-box is default
+*/
+/* CLEAR FIX - clear after floats
+- usage: @include clearfix;
+- no arguments
+*/
+/* TRANSITIONS
+- usage: @include transitions; or @include transitions(color, .5, ease-out, .1);
+*/
+/* BORDER RADIUS - for the rounded edges
+- usage: @include border-radius-radius; or @include border-radius-radius(5px);
+*/
+/* BORDER RADIUS - for circling
+- usage: @include border-radius-round; or @include border-radius-round(100%);
+*/
+/* BORDER RADIUS - for defining only some rounded corners
+- usage: @include border-radius-custom; or @include border-radius-custom(5px, 5px, 0, 0);
+- second example above will give 5px border radius on top left and top right corner
+*/
+/* BORDER RADIUS - for defining left corners radius
+- usage: @include border-radius-left; or @include border-radius-left(3px, 0, 0, 3px);
+- second example above will give 5px border radius on top left and bottom left corner
+*/
+/* BORDER RADIUS - for defining right corners radius
+- usage: @include border-radius-right; or @include border-radius-right(0, 3px, 3px, 0);
+- second example above will give 5px border radius on top right and bottom right corner
+*/
+/* CENTER ANYTHING - with position absolute
+- usage: @include center(vertical/horizontal/both)
+- must have argument
+- important: put transform-style: preserve-3d; in case of blurry elements
+*/
+/* BOX SHADOW
+- usage: @include box-shadow; or @include box-shadow(0, 2px, 2px, #333);
+*/
+/* GRADIENT BACKGROUND - with fallback
+- usage: @include gradient(90, #fff, #333);
+- must have argument
+*/
+/* Rotate - with fallback
+- usage: @include rotate; or @include rotate(90);
+*/
+/* Opacity - cross browser
+- usage @include opacity(0.5);
+- must have argument
+*/
+/*
+- Name: Raw git project - base.scss
+- Version: 1.0
+- Latest update: 19.06.2016
+- Author: Mario Loncarek
+- Author web site: http://marioloncarek.com
+*/
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––
+BASE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+html {
+  /* 767px */
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    min-height: 100%;
+    height: 100%;
+    font-size: 62.5%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+@media only screen and (max-width: 47.938em) {
+    html {
+        font-size: 55%;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    height: 100%;
+    background: #fff;
+    color: #444;
+    letter-spacing: 0.03em;
+    font-size: 1.4em;
+    font-family: "Muli", sans-serif;
+    line-height: 1.5;
+}
+
+* {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+*:before, *:after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::-webkit-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::-ms-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::-m4r10-l0nc4rek {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    color: #BADA55;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+a {
+    color: #0071bc;
+    text-decoration: none;
+    -webkit-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+}
+
+a:hover {
+    color: tint(#0071bc, 40%);
+}
+
+a.alt {
+    color: #333;
+}
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––
+PROJECT
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*
+- Name: Plugin name
+- Version: 1.0
+- Author: Mario Loncarek
+- Author web site: http://marioloncarek.com
+*/
+
+/*# sourceMappingURL=maps/style.css.map */

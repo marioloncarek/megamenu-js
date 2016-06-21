@@ -1,0 +1,101 @@
+/*
+- Name: Raw git project - base.scss
+- Version: 1.0
+- Latest update: 19.06.2016
+- Author: Mario Loncarek
+- Author web site: http://marioloncarek.com
+*/
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––
+BASE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+html {
+  @include box-sizing;
+
+  @include breakpoint(sm) {
+    font-size: 55%;
+  }
+
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll;
+  min-height: 100%;
+  height: 100%;
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  height: 100%;
+  background: $body-background;
+  color: $base-font-color;
+  letter-spacing: $base-letter-spacing;
+  font-size: $base-font-size;
+  font-family: $base-font;
+  line-height: $base-line-height;
+}
+
+* {
+  box-sizing: inherit;
+
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+
+}
+
+::-moz-selection {
+  background: $selection-color;
+  text-shadow: none;
+}
+
+::selection {
+  background: $selection-color;
+  text-shadow: none;
+}
+
+::-webkit-selection {
+  background: $selection-color;
+  text-shadow: none;
+}
+
+::-ms-selection {
+  background: $selection-color;
+  text-shadow: none;
+}
+
+::-m4r10-l0nc4rek {
+  color: #BADA55;
+  display: flex;
+}
+
+input,
+select,
+textarea,
+button {
+
+  &:focus {
+    outline: none;
+  }
+
+}
+
+a {
+  @include transitions;
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $link-color-hover;
+  }
+
+  &.alt {
+    color: $ui-default;
+  }
+
+}

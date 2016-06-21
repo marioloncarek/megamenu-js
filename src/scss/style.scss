@@ -1,0 +1,21 @@
+/* 
+- Name: Raw git project - style.scss
+- Version: 1.0
+- Latest update: 19.06.2016
+- Author: Mario Loncarek
+- Author web site: http://marioloncarek.com
+*/
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––
+IMPORTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––
+BASE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import 'base/normalize';
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/base';
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––
+PROJECT
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import 'project/pluginname';
