@@ -778,14 +778,12 @@ PROJECT
 /* ANIMATE.CSS */
 @-webkit-keyframes fadeInDown {
     from {
-        display: none;
         opacity: 0;
-        -webkit-transform: translate3d(0, -100%, 0);
-        transform: translate3d(0, -100%, 0);
+        -webkit-transform: translate3d(0, -20px, 0);
+        transform: translate3d(0, -20px, 0);
     }
 
     to {
-        display: block;
         opacity: 1;
         -webkit-transform: none;
         transform: none;
@@ -794,14 +792,12 @@ PROJECT
 
 @keyframes fadeInDown {
     from {
-        display: none;
         opacity: 0;
-        -webkit-transform: translate3d(0, -100%, 0);
-        transform: translate3d(0, -100%, 0);
+        -webkit-transform: translate3d(0, -20px, 0);
+        transform: translate3d(0, -20px, 0);
     }
 
     to {
-        display: block;
         opacity: 1;
         -webkit-transform: none;
         transform: none;
@@ -809,39 +805,43 @@ PROJECT
 }
 
 .fadeInDown {
+    -webkit-animation: .2s ease;
+    animation: .2s ease;
     -webkit-animation-name: fadeInDown;
     animation-name: fadeInDown;
 }
 
 @-webkit-keyframes fadeOutUp {
     from {
-        display: block;
         opacity: 1;
+        -webkit-transform: none;
+        transform: none;
     }
 
     to {
-        display: none;
         opacity: 0;
-        -webkit-transform: translate3d(0, -100%, 0);
-        transform: translate3d(0, -100%, 0);
+        -webkit-transform: translate3d(0, -20px, 0);
+        transform: translate3d(0, -20px, 0);
     }
 }
 
 @keyframes fadeOutUp {
     from {
-        display: block;
         opacity: 1;
+        -webkit-transform: none;
+        transform: none;
     }
 
     to {
-        display: none;
         opacity: 0;
-        -webkit-transform: translate3d(0, -100%, 0);
-        transform: translate3d(0, -100%, 0);
+        -webkit-transform: translate3d(0, -20px, 0);
+        transform: translate3d(0, -20px, 0);
     }
 }
 
 .fadeOutUp {
+    -webkit-animation: .2s ease;
+    animation: .2s ease;
     -webkit-animation-name: fadeOutUp;
     animation-name: fadeOutUp;
 }

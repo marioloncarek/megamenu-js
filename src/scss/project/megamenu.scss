@@ -142,36 +142,35 @@ $responsive-breakpoint: 767px !default;
 
 @keyframes fadeInDown {
   from {
-    display: none;
     opacity: 0;
-    transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -20px, 0);
   }
 
   to {
-    display: block;
     opacity: 1;
     transform: none;
   }
 }
 
 .fadeInDown {
+  animation: .2s ease;
   animation-name: fadeInDown;
 }
 
 @keyframes fadeOutUp {
   from {
-    display: block;
     opacity: 1;
+    transform: none;
   }
 
   to {
-    display: none;
     opacity: 0;
-    transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -20px, 0);
   }
 }
 
 .fadeOutUp {
+  animation: .2s ease;
   animation-name: fadeOutUp;
 }
 

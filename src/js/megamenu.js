@@ -34,12 +34,15 @@
         $('.menu > ul > li').on({
             mouseenter: function () {
                 if (getWindowWidth() >= responsiveBreakpoint) {
-                    $(this).children('ul').addClass('fadeInDown').removeClass('fadeOutUp');
+                    $(this).children('ul').css('display', 'block').removeClass('fadeOutUp').addClass('fadeInDown');
                 }
             },
             mouseleave: function () {
                 if (getWindowWidth() >= responsiveBreakpoint) {
-                    $(this).children('ul').addClass('fadeOutUp').removeClass('fadeInDown');
+                    $(this).children('ul').removeClass('fadeInDown').addClass('fadeOutUp').delay(200).queue(function (next) {
+                        $(this).css('display', 'none');
+                        next();
+                    });
                 }
             },
             click: function () {
