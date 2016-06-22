@@ -1,4 +1,3 @@
-/*
 (function ($) {
 
     'use strict';
@@ -16,7 +15,6 @@
                 }
             }
         }
-        console.log(windowWidth);
         return windowWidth;
     }
 
@@ -24,15 +22,24 @@
 
         var responsiveBreakpoint = 767;
 
+        $('.menu > ul').before('<button class="hamburger hamburger--squeeze" type="button"><span class="hamburger-menu-text">Navigation</span><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>');
+
+        $('.hamburger').on('click', function () {
+            $(this).toggleClass('is-active');
+            $('.menu > ul').toggleClass('is-shown-on-mobile');
+        });
+
+        $('.menu > ul > li > ul:not(:has(ul))').addClass('is-classic-dropdown');
+
         $('.menu > ul > li').on({
             mouseenter: function () {
                 if (getWindowWidth() >= responsiveBreakpoint) {
-                    $(this).children('ul').stop(true, false).show();
+                    $(this).children('ul').addClass('fadeInDown').removeClass('fadeOutUp');
                 }
             },
             mouseleave: function () {
                 if (getWindowWidth() >= responsiveBreakpoint) {
-                    $(this).children('ul').stop(true, false).hide();
+                    $(this).children('ul').addClass('fadeOutUp').removeClass('fadeInDown');
                 }
             },
             click: function () {
@@ -43,4 +50,9 @@
         });
     });
 
-}($));*/
+    /*$(window).resize(function () {
+     $(".menu > ul > li").children("ul").hide();
+     $(".menu > ul").removeClass('show-on-mobile');
+     });*/
+
+}($));
