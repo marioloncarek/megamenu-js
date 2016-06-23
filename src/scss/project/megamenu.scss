@@ -75,6 +75,7 @@ $megamenu-z-index: 99 !default;
       float: left;
       @include breakpoint($responsive-breakpoint) {
         width: 100%;
+        position: relative;
       }
       > a {
         @include transitions;
@@ -102,6 +103,9 @@ $megamenu-z-index: 99 !default;
         &.is-classic-dropdown {
           width: $classic-dropdown-width;
           left: inherit;
+          @include breakpoint($responsive-breakpoint) {
+            width: 100%;
+          }
           > li {
             width: 100%;
             padding: 1em;
@@ -121,11 +125,17 @@ $megamenu-z-index: 99 !default;
             border-bottom: $level-2-border;
             color: $level-2-color;
             font-size: $level-2-font-size;
+            @include breakpoint($responsive-breakpoint) {
+              border: 0;
+            }
           }
           > ul {
             display: block;
             position: relative;
             padding-top: 1em;
+            @include breakpoint($responsive-breakpoint) {
+              display: none;
+            }
             > li {
               width: 100%;
               padding: 0;
@@ -143,12 +153,54 @@ $megamenu-z-index: 99 !default;
   }
 }
 
-.dropdown-indicator {
+.dropdown-button {
   -webkit-appearance: none;
   outline: none;
   border: 0;
   cursor: pointer;
   display: none;
+  vertical-align: top;
+  @include breakpoint($responsive-breakpoint) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 10%;
+  }
+  .dropdown-button-text {
+    position: absolute;
+    top: 1.5em;
+    width: 10px;
+    height: 10px;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      background-color: white;
+      transition: transform 0.25s ease-out;
+    }
+    &:before {
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 100%;
+    }
+    &:after {
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+    }
+    &.is-active {
+      &:before {
+        transform: rotate(90deg);
+      }
+      &:after {
+        transform: rotate(180deg);
+      }
+    }
+  }
 }
 
 /* CSS ANIMATION FROM ANIMATE.CSS */
@@ -197,7 +249,7 @@ $megamenu-z-index: 99 !default;
 // ==================================================
 $hamburger-padding-x: 1.5em !default;
 $hamburger-padding-y: 1.5em !default;
-$hamburger-layer-width: 35px !default;
+$hamburger-layer-width: 25px !default;
 $hamburger-layer-height: 2px !default;
 $hamburger-layer-spacing: 6px !default;
 $hamburger-layer-color: #444 !default;

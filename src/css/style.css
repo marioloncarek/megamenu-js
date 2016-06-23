@@ -691,6 +691,7 @@ PROJECT
 
 @media only screen and (max-width: 767px) {
     .menu ul > li {
+        position: relative;
         width: 100%;
     }
 }
@@ -732,6 +733,12 @@ PROJECT
     width: 300px;
 }
 
+@media only screen and (max-width: 767px) {
+    .menu ul > li > ul.is-classic-dropdown {
+        width: 100%;
+    }
+}
+
 .menu ul > li > ul.is-classic-dropdown > li {
     padding: 1em;
     width: 100%;
@@ -759,10 +766,22 @@ PROJECT
     font-size: 1em;
 }
 
+@media only screen and (max-width: 767px) {
+    .menu ul > li > ul > li > a {
+        border: 0;
+    }
+}
+
 .menu ul > li > ul > li > ul {
     position: relative;
     display: block;
     padding-top: 1em;
+}
+
+@media only screen and (max-width: 767px) {
+    .menu ul > li > ul > li > ul {
+        display: none;
+    }
 }
 
 .menu ul > li > ul > li > ul > li {
@@ -777,12 +796,67 @@ PROJECT
     font-size: 0.9em;
 }
 
-.dropdown-indicator {
+.dropdown-button {
     display: none;
     outline: none;
     border: 0;
+    vertical-align: top;
     cursor: pointer;
     -webkit-appearance: none;
+}
+
+@media only screen and (max-width: 767px) {
+    .dropdown-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        width: 10%;
+    }
+}
+
+.dropdown-button .dropdown-button-text {
+    position: absolute;
+    top: 1.5em;
+    width: 10px;
+    height: 10px;
+}
+
+.dropdown-button .dropdown-button-text:before, .dropdown-button .dropdown-button-text:after {
+    position: absolute;
+    background-color: white;
+    content: "";
+    -webkit-transition: -webkit-transform 0.25s ease-out;
+    transition: -webkit-transform 0.25s ease-out;
+    transition: transform 0.25s ease-out;
+    transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
+}
+
+.dropdown-button .dropdown-button-text:before {
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+}
+
+.dropdown-button .dropdown-button-text:after {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+}
+
+.dropdown-button .dropdown-button-text.is-active:before {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.dropdown-button .dropdown-button-text.is-active:after {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 
 /* CSS ANIMATION FROM ANIMATE.CSS */
@@ -890,7 +964,7 @@ PROJECT
     position: relative;
     display: inline-block;
     float: right;
-    width: 35px;
+    width: 25px;
     height: 18px;
 }
 
@@ -902,7 +976,7 @@ PROJECT
 
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
     position: absolute;
-    width: 35px;
+    width: 25px;
     height: 2px;
     -webkit-border-radius: 4px;
     border-radius: 4px;
