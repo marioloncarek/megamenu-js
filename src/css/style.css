@@ -639,6 +639,8 @@ PROJECT
 - Author: Mario Loncarek
 - Author web site: http://marioloncarek.com
 */
+/* VARIABLES */
+/* MENU */
 .menu {
     margin: 0 auto;
     width: 80%;
@@ -653,10 +655,11 @@ PROJECT
 
 .menu ul {
     position: relative;
+    /* IF .menu position=relative -> ul = container width, ELSE ul = 100% width */
+    z-index: 99;
     margin: 0;
     padding: 0;
     list-style: none;
-    /* IF .menu position=relative -> ul = container width, ELSE ul = 100% width */
 }
 
 .menu ul:before, .menu ul:after {
@@ -713,7 +716,6 @@ PROJECT
 .menu ul > li > ul {
     position: absolute;
     left: 0;
-    z-index: 99;
     display: none;
     width: 100%;
     background: #0071bc;
@@ -775,77 +777,70 @@ PROJECT
     font-size: 0.9em;
 }
 
-/* ANIMATE.CSS */
-@-webkit-keyframes fadeInDown {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(0, -20px, 0);
-        transform: translate3d(0, -20px, 0);
-    }
-
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
+.dropdown-indicator {
+    display: none;
+    outline: none;
+    border: 0;
+    cursor: pointer;
+    -webkit-appearance: none;
 }
 
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(0, -20px, 0);
-        transform: translate3d(0, -20px, 0);
-    }
-
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-.fadeInDown {
+/* CSS ANIMATION FROM ANIMATE.CSS */
+.animation-in {
     -webkit-animation: .2s ease;
     animation: .2s ease;
-    -webkit-animation-name: fadeInDown;
-    animation-name: fadeInDown;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
 }
 
-@-webkit-keyframes fadeOutUp {
-    from {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-
-    to {
-        opacity: 0;
-        -webkit-transform: translate3d(0, -20px, 0);
-        transform: translate3d(0, -20px, 0);
-    }
-}
-
-@keyframes fadeOutUp {
-    from {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-
-    to {
-        opacity: 0;
-        -webkit-transform: translate3d(0, -20px, 0);
-        transform: translate3d(0, -20px, 0);
-    }
-}
-
-.fadeOutUp {
+.animation-out {
     -webkit-animation: .2s ease;
     animation: .2s ease;
-    -webkit-animation-name: fadeOutUp;
-    animation-name: fadeOutUp;
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
 }
 
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/* MOBILE MENU */
 /*!
  * Hamburgers
  * @description Tasty CSS-animated hamburgers

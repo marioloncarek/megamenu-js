@@ -5,6 +5,8 @@
 - Author web site: http://marioloncarek.com
 */
 
+/* VARIABLES */
+
 $menu-bg: #f5f5f5 !default;
 $hover-and-dropdown-bg: #0071bc !default;
 $level-1-font-size: 1em !default;
@@ -17,6 +19,7 @@ $level-2-child-width: 25% !default;
 $classic-dropdown-width: 300px !default;
 $level-3-font-size: .9em !default;
 $responsive-breakpoint: 767px !default;
+$megamenu-z-index: 99 !default;
 
 @mixin clearfix {
   &:before,
@@ -44,6 +47,8 @@ $responsive-breakpoint: 767px !default;
   transition: $property $duration $timing-function $delay;
 }
 
+/* MENU */
+
 .menu {
   width: 80%;
   margin: 0 auto;
@@ -57,6 +62,7 @@ $responsive-breakpoint: 767px !default;
     list-style: none;
     position: relative;
     /* IF .menu position=relative -> ul = container width, ELSE ul = 100% width */
+    z-index: $megamenu-z-index;
     @include breakpoint($responsive-breakpoint) {
       display: none;
     }
@@ -87,7 +93,6 @@ $responsive-breakpoint: 767px !default;
       > ul {
         display: none;
         position: absolute;
-        z-index: 99;
         left: 0;
         width: 100%;
         background: $hover-and-dropdown-bg;
@@ -138,41 +143,47 @@ $responsive-breakpoint: 767px !default;
   }
 }
 
-/* ANIMATE.CSS */
+.dropdown-indicator {
+  -webkit-appearance: none;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  display: none;
+}
 
-@keyframes fadeInDown {
+/* CSS ANIMATION FROM ANIMATE.CSS */
+
+.animation-in {
+  animation: .2s ease;
+  animation-name: fadeIn;
+}
+
+.animation-out {
+  animation: .2s ease;
+  animation-name: fadeOut;
+}
+
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translate3d(0, -20px, 0);
   }
 
   to {
     opacity: 1;
-    transform: none;
   }
 }
 
-.fadeInDown {
-  animation: .2s ease;
-  animation-name: fadeInDown;
-}
-
-@keyframes fadeOutUp {
+@keyframes fadeOut {
   from {
     opacity: 1;
-    transform: none;
   }
 
   to {
     opacity: 0;
-    transform: translate3d(0, -20px, 0);
   }
 }
 
-.fadeOutUp {
-  animation: .2s ease;
-  animation-name: fadeOutUp;
-}
+/* MOBILE MENU */
 
 /*!
  * Hamburgers
