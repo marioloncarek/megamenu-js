@@ -740,27 +740,28 @@ PROJECT
 }
 
 .menu ul > li > ul.is-classic-dropdown > li {
-    padding: 1em;
     width: 100%;
 }
 
 .menu ul > li > ul.is-classic-dropdown > li > a {
+    padding: 1em;
     border: 0;
 }
 
 .menu ul > li > ul > li {
-    padding: 1.5em;
+    padding: 0 1.5em;
     width: 25%;
 }
 
 @media only screen and (max-width: 767px) {
     .menu ul > li > ul > li {
+        padding: 0;
         width: 100%;
     }
 }
 
 .menu ul > li > ul > li > a {
-    padding: 0;
+    padding: 1em 0 .5em;
     border-bottom: 1px solid #ccc;
     color: #fff;
     font-size: 1em;
@@ -768,6 +769,7 @@ PROJECT
 
 @media only screen and (max-width: 767px) {
     .menu ul > li > ul > li > a {
+        padding: 1.5em 4em;
         border: 0;
     }
 }
@@ -775,12 +777,14 @@ PROJECT
 .menu ul > li > ul > li > ul {
     position: relative;
     display: block;
-    padding-top: 1em;
+    padding: 1em 0;
 }
 
 @media only screen and (max-width: 767px) {
     .menu ul > li > ul > li > ul {
         display: none;
+        padding: 0;
+        background: #0080d6;
     }
 }
 
@@ -794,6 +798,12 @@ PROJECT
     border: 0;
     text-transform: uppercase;
     font-size: 0.9em;
+}
+
+@media only screen and (max-width: 767px) {
+    .menu ul > li > ul > li > ul > li > a {
+        padding: 1.5em 0 1.5em 6em;
+    }
 }
 
 .dropdown-button {
@@ -812,25 +822,27 @@ PROJECT
         right: 0;
         bottom: 0;
         display: block;
-        width: 10%;
+        width: 60px;
     }
 }
 
 .dropdown-button .dropdown-button-text {
     position: absolute;
     top: 1.5em;
-    width: 10px;
-    height: 10px;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 .dropdown-button .dropdown-button-text:before, .dropdown-button .dropdown-button-text:after {
     position: absolute;
-    background-color: white;
+    background-color: #fff;
     content: "";
-    -webkit-transition: -webkit-transform 0.25s ease-out;
-    transition: -webkit-transform 0.25s ease-out;
-    transition: transform 0.25s ease-out;
-    transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
+    -webkit-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
 }
 
 .dropdown-button .dropdown-button-text:before {
@@ -838,6 +850,9 @@ PROJECT
     left: 50%;
     width: 2px;
     height: 100%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 .dropdown-button .dropdown-button-text:after {
@@ -845,18 +860,13 @@ PROJECT
     left: 0;
     width: 100%;
     height: 2px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 .dropdown-button .dropdown-button-text.is-active:before {
-    -webkit-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-}
-
-.dropdown-button .dropdown-button-text.is-active:after {
-    -webkit-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    transform: rotate(180deg);
+    opacity: 0;
 }
 
 /* CSS ANIMATION FROM ANIMATE.CSS */

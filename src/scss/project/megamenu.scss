@@ -108,33 +108,37 @@ $megamenu-z-index: 99 !default;
           }
           > li {
             width: 100%;
-            padding: 1em;
             > a {
               border: 0;
+              padding: 1em;
             }
           }
         }
         > li {
           width: $level-2-child-width;
-          padding: 1.5em;
+          padding: 0 1.5em;
           @include breakpoint($responsive-breakpoint) {
             width: 100%;
+            padding: 0;
           }
           > a {
-            padding: 0;
+            padding: 1em 0 .5em;
             border-bottom: $level-2-border;
             color: $level-2-color;
             font-size: $level-2-font-size;
             @include breakpoint($responsive-breakpoint) {
               border: 0;
+              padding: 1.5em 4em;
             }
           }
           > ul {
             display: block;
             position: relative;
-            padding-top: 1em;
+            padding: 1em 0;
             @include breakpoint($responsive-breakpoint) {
               display: none;
+              background: lighten($hover-and-dropdown-bg, 5%);
+              padding: 0;
             }
             > li {
               width: 100%;
@@ -144,6 +148,9 @@ $megamenu-z-index: 99 !default;
                 border: 0;
                 font-size: $level-3-font-size;
                 text-transform: uppercase;
+                @include breakpoint($responsive-breakpoint) {
+                  padding: 1.5em 0 1.5em 6em;
+                }
               }
             }
           }
@@ -166,38 +173,39 @@ $megamenu-z-index: 99 !default;
     top: 0;
     right: 0;
     bottom: 0;
-    width: 10%;
+    width: 60px;
   }
   .dropdown-button-text {
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     top: 1.5em;
-    width: 10px;
-    height: 10px;
+    width: 14px; //looks better when even number
+    height: 14px; //looks better when even number
     &:before,
     &:after {
       content: "";
       position: absolute;
-      background-color: white;
-      transition: transform 0.25s ease-out;
+      background-color: #fff;
+      @include transitions;
     }
     &:before {
       top: 0;
       left: 50%;
+      transform: translateX(-50%);
       width: 2px;
       height: 100%;
     }
     &:after {
       top: 50%;
+      transform: translateY(-50%);
       left: 0;
       width: 100%;
       height: 2px;
     }
     &.is-active {
       &:before {
-        transform: rotate(90deg);
-      }
-      &:after {
-        transform: rotate(180deg);
+        opacity: 0;
       }
     }
   }

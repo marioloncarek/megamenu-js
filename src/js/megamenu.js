@@ -2,6 +2,11 @@
 
     'use strict';
 
+    //vars
+
+    var responsiveBreakpoint = 767;
+
+
     //get real window width for responsive
 
     function getWindowWidth() {
@@ -22,24 +27,17 @@
 
     $(document).ready(function () {
 
-        //vars
-
-        var responsiveBreakpoint = 767;
-
         //menu
 
         $('.menu > ul > li').on({
             mouseenter: function () {
                 if (getWindowWidth() >= responsiveBreakpoint) {
-                    $(this).children('ul').stop().css('z-index', 999).css('display', 'block').removeClass('animation-out').addClass('animation-in');
+                    $(this).children('ul').stop().show();
                 }
             },
             mouseleave: function () {
                 if (getWindowWidth() >= responsiveBreakpoint) {
-                    $(this).children('ul').stop().css('z-index', -10).removeClass('animation-in').addClass('animation-out').delay(200).queue(function (next) {
-                        $(this).css('display', 'none');
-                        next();
-                    });
+                    $(this).children('ul').stop().hide();
                 }
             }
         });
@@ -85,9 +83,15 @@
 
     });
 
-    /*$(window).resize(function () {
-     $(".menu > ul > li").children("ul").hide();
-     $(".menu > ul").removeClass('show-on-mobile');
-     });*/
+    $(window).resize(function () {
+        if (getWindowWidth() < responsiveBreakpoint) {
+            $('.menu > ul').removeClass('is-shown-on-mobile');
+            $('.menu li').children('ul').hide();
+            $('.dropdown-button-text').removeClass('is-active');
+            $('.hamburger').removeClass('is-active');
+        } else {
+            $('.menu > ul > li > ul > li').children('ul').show();
+        }
+    });
 
 }($));
