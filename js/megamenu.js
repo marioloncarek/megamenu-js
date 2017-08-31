@@ -28,12 +28,12 @@ $(document).ready(function () {
     $(".menu > ul > li").hover(
         function (e) {
             if ($(window).width() > 943) {
-                $(this).children("ul").stop(true, false).fadeIn(150);
+                $(this).children("ul").fadeIn(150);
                 e.preventDefault();
             }
         }, function (e) {
             if ($(window).width() > 943) {
-                $(this).children("ul").stop(true, false).fadeOut(150);
+                $(this).children("ul").fadeOut(150);
                 e.preventDefault();
             }
         }
