@@ -1,6 +1,8 @@
 # megamenu-js
 Last responsive megamenu you'll ever need
 
+##HUGE THANKS TO Michele Maietta (https://github.com/doppiam) FOR ALL CONTRIBUTION IN THIS PROJECT. 
+
 
 ## Features
 - Cross-browser copatibility
