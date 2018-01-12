@@ -32,6 +32,13 @@ $(document).ready(function () {
     );
     //If width is more than 943px dropdowns are displayed on hover
 
+
+    //the following hides the menu when a click is registered outside
+    $(document).on('click', function(e){
+        if($(e.target).parents('.menu').length === 0)
+            $(".menu > ul").removeClass('show-on-mobile');
+    });
+
     $(".menu > ul > li").click(function() {
         //no more overlapping menus
         //hides other children menus when a list item with children menus is clicked
